@@ -1,0 +1,166 @@
+# This probably should be the ONLY .gitattributes file that handles LFS stuff in the whole repo.
+# Unless, I guess, we have a well-isolated copy-pasted repo in here too.
+
+#If a line is commented out, it is a duplicate of another somewhere in this file.
+# More related info:
+
+# Gitattributes specifiers
+#https://www.edwardthomson.com/blog/advent_day_14_gitattributes_for_binary_files.html
+
+# Merging LFS Files
+#https://github.com/desktop/desktop/issues/7166
+#https://github.com/desktop/desktop/issues/7166#issuecomment-775783527
+
+# UE4 gitignore/gitattributes
+#https://github.com/equilaterus-gamestudios/ue4-gitlfs-baseproject
+#https://github.com/github/gitignore/blob/master/UnrealEngine.gitignore
+#https://github.com/MOZGIII/ue4-gitignore/blob/master/.gitattributes
+
+# Case sensitivity
+#https://github.com/git-lfs/git-lfs/issues/2858#issuecomment-364497735
+
+# Command to update LFS tracking without editing stuff: git lfs track --no-modify-attrs
+#https://github.com/git-lfs/git-lfs/pull/2175
+
+#----------------------------
+
+#https://github.com/MOZGIII/ue4-gitignore/blob/master/.gitattributes
+### Unreal Engine file types.
+#*.uasset filter=lfs diff=lfs merge=lfs -text
+#https://github.com/desktop/desktop/issues/7166#issuecomment-775783527
+*.uasset filter=lfs merge=lfs -diff -text
+*.umap filter=lfs merge=lfs -diff -text
+# Raw Content file types.
+# *.fbx filter=lfs merge=lfs -diff -text
+# *.3ds filter=lfs merge=lfs -diff -text
+# *.psd filter=lfs merge=lfs -diff -text
+# *.png filter=lfs merge=lfs -diff -text
+# *.mp3 filter=lfs merge=lfs -diff -text
+# *.wav filter=lfs merge=lfs -diff -text
+# *.xcf filter=lfs merge=lfs -diff -text
+# *.jpg filter=lfs merge=lfs -diff -text
+
+#https://github.com/desktop/desktop/issues/7166#issuecomment-578441575
+### Unity LFS
+*.cubemap filter=lfs merge=lfs -diff -text
+*.unitypackage filter=lfs merge=lfs -diff -text
+*.mat filter=lfs merge=lfs -diff -text
+*.anim filter=lfs merge=lfs -diff -text
+*.unity filter=lfs merge=lfs -diff -text
+*.prefab filter=lfs merge=lfs -diff -text
+*.physicMaterial2D filter=lfs merge=lfs -diff -text
+*.physicMaterial filter=lfs merge=lfs -diff -text
+*.asset filter=lfs merge=lfs -diff -text
+*.meta filter=lfs merge=lfs -diff -text
+*.controller filter=lfs merge=lfs -diff -text
+*.sbsar filter=lfs merge=lfs -diff -text
+*.flare filter=lfs merge=lfs -diff -text
+*.playable filter=lfs merge=lfs -diff -text
+
+### 3D models
+*.3dm filter=lfs merge=lfs -diff -text
+*.3ds filter=lfs merge=lfs -diff -text
+*.blend filter=lfs merge=lfs -diff -text
+*.c4d filter=lfs merge=lfs -diff -text
+*.collada filter=lfs merge=lfs -diff -text
+*.dae filter=lfs merge=lfs -diff -text
+*.dxf filter=lfs merge=lfs -diff -text
+*.fbx filter=lfs merge=lfs -diff -text
+*.FBX filter=lfs merge=lfs -diff -text
+*.jas filter=lfs merge=lfs -diff -text
+*.lws filter=lfs merge=lfs -diff -text
+*.lxo filter=lfs merge=lfs -diff -text
+*.ma filter=lfs merge=lfs -diff -text
+*.max filter=lfs merge=lfs -diff -text
+*.mb filter=lfs merge=lfs -diff -text
+*.obj filter=lfs merge=lfs -diff -text
+*.ply filter=lfs merge=lfs -diff -text
+*.skp filter=lfs merge=lfs -diff -text
+*.stl filter=lfs merge=lfs -diff -text
+*.STL filter=lfs merge=lfs -diff -text
+*.ztl filter=lfs merge=lfs -diff -text
+*.spm filter=lfs merge=lfs -diff -text
+
+### Audio
+*.aif filter=lfs merge=lfs -diff -text
+*.aiff filter=lfs merge=lfs -diff -text
+*.it filter=lfs merge=lfs -diff -text
+*.mod filter=lfs merge=lfs -diff -text
+*.mp3 filter=lfs merge=lfs -diff -text
+*.ogg filter=lfs merge=lfs -diff -text
+*.s3m filter=lfs merge=lfs -diff -text
+*.wav filter=lfs merge=lfs -diff -text
+*.xm filter=lfs merge=lfs -diff -text
+
+### Video
+*.asf filter=lfs merge=lfs -diff -text
+*.avi filter=lfs merge=lfs -diff -text
+*.flv filter=lfs merge=lfs -diff -text
+*.mov filter=lfs merge=lfs -diff -text
+*.mp4 filter=lfs merge=lfs -diff -text
+*.mpeg filter=lfs merge=lfs -diff -text
+*.mpg filter=lfs merge=lfs -diff -text
+*.ogv filter=lfs merge=lfs -diff -text
+*.wmv filter=lfs merge=lfs -diff -text
+
+### Images
+*.bmp filter=lfs merge=lfs -diff -text
+*.exr filter=lfs merge=lfs -diff -text
+*.gif filter=lfs merge=lfs -diff -text
+*.hdr filter=lfs merge=lfs -diff -text
+*.iff filter=lfs merge=lfs -diff -text
+*.jpeg filter=lfs merge=lfs -diff -text
+*.JPEG filter=lfs merge=lfs -diff -text
+*.jpg filter=lfs merge=lfs -diff -text
+*.JPG filter=lfs merge=lfs -diff -text
+*.pict filter=lfs merge=lfs -diff -text
+*.png filter=lfs merge=lfs -diff -text
+*.PNG filter=lfs merge=lfs -diff -text
+#Photoshop
+*.psd filter=lfs merge=lfs -diff -text
+#GIMP
+*.xcf filter=lfs merge=lfs -diff -text
+*.tga filter=lfs merge=lfs -diff -text
+*.tif filter=lfs merge=lfs -diff -text
+*.tiff filter=lfs merge=lfs -diff -text
+*.heic filter=lfs merge=lfs -diff -text
+*.HEIC filter=lfs merge=lfs -diff -text
+
+### Compressed Archive
+*.7z filter=lfs merge=lfs -diff -text
+*.bz2 filter=lfs merge=lfs -diff -text
+*.gz filter=lfs merge=lfs -diff -text
+*.rar filter=lfs merge=lfs -diff -text
+*.tar filter=lfs merge=lfs -diff -text
+*.zip filter=lfs merge=lfs -diff -text
+
+### Compiled Static Library (we usually gitignore these, but when we don't, we'll want these LFS'd)
+*.lib filter=lfs merge=lfs -diff -text
+*.a filter=lfs merge=lfs -diff -text
+
+### Compiled Dynamic Library (we usually gitignore these, but when we don't, we'll want these LFS'd)
+*.dll filter=lfs merge=lfs -diff -text
+*.pdb filter=lfs merge=lfs -diff -text
+*.so filter=lfs merge=lfs -diff -text
+
+### Fonts
+*.otf filter=lfs merge=lfs -diff -text
+*.ttf filter=lfs merge=lfs -diff -text
+
+### Executable/Installer
+*.apk filter=lfs merge=lfs -diff -text
+*.exe filter=lfs merge=lfs -diff -text
+
+### Documents
+*.pdf filter=lfs merge=lfs -diff -text
+
+### Etc
+*.bytes filter=lfs merge=lfs -diff -text
+*.url filter=lfs merge=lfs -diff -text
+*.pso filter=lfs merge=lfs -diff -text
+*.ptx filter=lfs merge=lfs -diff -text
+*.vso filter=lfs merge=lfs -diff -text
+*.gso filter=lfs merge=lfs -diff -text
+*.bin filter=lfs merge=lfs -diff -text
+*.dat filter=lfs merge=lfs -diff -text
+*.axobj filter=lfs merge=lfs -diff -text
